@@ -1,6 +1,6 @@
 import "./Footer.css"
 const Footer = () => {
-    return <footer class="footer">
+    return <footer className="footer">
     <div className="footer-content">
         <h2>Contact Us</h2>
         <p>123 Main Street, City</p>

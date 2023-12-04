@@ -1,5 +1,5 @@
 .products-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; /* Adjust as needed for spacing */
+  justify-content: space-evenly;
 }
