@@ -18,7 +18,7 @@
     letter-spacing: 1px;
   }
   
-  a {
+  .navbar a {
     color: white;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 600;
@@ -28,8 +28,10 @@
     transition: all 0.3s ease;
   }
   
-  a:hover {
-    /* text-decoration: underline; */
+  /* .navbar a:hover {
+    
+  } */
+  .navbar a.active{
     transform: translateY(-2px);
+    text-decoration: underline;
   }
-  
