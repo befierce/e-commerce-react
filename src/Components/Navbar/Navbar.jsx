@@ -10,14 +10,11 @@ const Navbar = () => {
       <NavLink id="websitename" to="/" activeClassName="active">
         ShopCop
       </NavLink>
-      <NavLink id="contact" to="/contact" activeClassName="active">
-        contact
+      <NavLink id="productsPage" to="/ProductsPage" activeClassName="active">
+        Products
       </NavLink>
       <NavLink id="about" to="/about" activeClassName="active">
-        about
-      </NavLink>
-      <NavLink id="cart" to="/cart" activeClassName="active">
-        cart
+        About
       </NavLink>
       <CartButton />
     </div>

@@ -10,7 +10,7 @@ const Products = (props) => {
         <img src={product.imageURL} alt={product.title} />
         <p>{product.title}</p>
         <p>Price: ${product.price}</p>
-        <AddToCartButton  item={product} id={product.id}/>
+        <AddToCartButton  item={product} id={product.id} description={props.description}/>
       </div>
     </ProductsCard>
   ));

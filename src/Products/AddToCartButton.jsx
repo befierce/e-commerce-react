@@ -7,7 +7,7 @@ const AddToCartButton = (props)=>{
 
 
     return <>
-        <button>Add to Cart</button>
+        <button>{props.description}</button>
     </>
 }
 

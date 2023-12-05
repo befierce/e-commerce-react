@@ -6,42 +6,25 @@ import Footer from "../Components/Footer/Footer";
 
 const dummy_data = [
     {
-      title: "nike Air 11",
+      title: "Shop For Men",
       price: 3200,
       imageURL:
-        "https://images.pexels.com/photos/10155098/pexels-photo-10155098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/19166244/pexels-photo-19166244/free-photo-of-man-hand-holding-shoes.jpeg",
     },
     {
-      title: "nike Air 11",
+      title: "Shop For Women",
       price: 3200,
       imageURL:
-        "https://images.pexels.com/photos/7524995/pexels-photo-7524995.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/977908/pexels-photo-977908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     
     {
-      title: "nike Air 11",
+      title: "Shop For Kids",
       price: 3200,
       imageURL:
-        "https://images.pexels.com/photos/60735/pexels-photo-60735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/5623677/pexels-photo-5623677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
-    {
-      title: "nike wistle 22",
-      price: 3200,
-      imageURL:
-        "https://images.pexels.com/photos/18946583/pexels-photo-18946583/free-photo-of-brand-design-sneaker.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      title: "nike shoe",
-      price: 3200,
-      imageURL:
-        "https://images.pexels.com/photos/8278491/pexels-photo-8278491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      title: "nike shoe",
-      price: 3200,
-      imageURL:
-        "https://images.pexels.com/photos/18946650/pexels-photo-18946650/free-photo-of-nike-air-max-1-97-sean-wotherspoon-shoes.jpeg",
-    },
+
   ];
 
 const Home = ()=>{
@@ -53,7 +36,7 @@ const Home = ()=>{
             <Container />
           </header>
           <div className="products-container">
-          <Product data={dummy_data} />
+          <Product data={dummy_data} description="Take A Tour"/>
           </div>
           <Footer></Footer>
         </div>
