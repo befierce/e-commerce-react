@@ -32,6 +32,6 @@
     
   } */
   .navbar a.active{
-    transform: translateY(-2px);
+    /* transform: translateY(-2px); */
     text-decoration: underline;
   }

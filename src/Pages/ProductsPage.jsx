@@ -51,7 +51,7 @@ const ProductsPage = ()=>{
         <div>
           <header>
             <Navbar />
-            <Container />
+            <Container description="Shoe Gallery"/>
           </header>
           <div className="products-container">
           <Product data={dummy_data} description="Add To Cart"/>

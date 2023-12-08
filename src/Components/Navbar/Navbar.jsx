@@ -1,20 +1,23 @@
 import React from "react";
 import "./Navbar.css";
 import CartButton from "../Cart/CartButton/CartButton";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className="navbar">
-      <NavLink id="websitename" to="/" activeClassName="active">
+      <NavLink id="websitename" to="/" activeclassname="active">
         ShopCop
       </NavLink>
-      <NavLink id="productsPage" to="/ProductsPage" activeClassName="active">
+      <NavLink id="productsPage" to="/ProductsPage" activeclassname="active">
         Products
       </NavLink>
-      <NavLink id="about" to="/about" activeClassName="active">
+      <NavLink id="about" to="/about" activeclassname="active">
         About
+      </NavLink>
+      <NavLink id="contact-us" to="/contact-us" activeclassname="active">
+        Contact
       </NavLink>
       <CartButton />
     </div>

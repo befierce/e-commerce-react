@@ -1,10 +1,10 @@
 import React from "react";
 import "./Container.css";
 
-const Container = () => {
+const Container = (props) => {
   return (
     <div className="container">
-      <h1>this is ShopCop</h1>
+      <h1>{props.description}</h1>
     </div>
   );
 };

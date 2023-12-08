@@ -33,7 +33,7 @@ const Home = ()=>{
         <div>
           <header>
             <Navbar />
-            <Container />
+            <Container description = "This is ShopCop"/>
           </header>
           <div className="products-container">
           <Product data={dummy_data} description="Take A Tour"/>
