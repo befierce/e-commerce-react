@@ -24,8 +24,9 @@ const ContactUs = (props) => {
       email: email,
       number: number,
     };
-    
-    const response = await fetch("https://react-e-commerce-4534f-default-rtdb.firebaseio.com/user-contact-database.json",
+
+    const response = await fetch(
+      "https://react-e-commerce-4534f-default-rtdb.firebaseio.com/user-contact-database.json",
       {
         method: "POST",
         body: JSON.stringify(data),
@@ -34,10 +35,12 @@ const ContactUs = (props) => {
         },
       }
     );
-      console.log(response);
+    if (response.ok) {
+      alert("submitted");
       setName("");
       setEmail("");
       setNumber("");
+    }
   };
 
   return (

@@ -5,13 +5,15 @@ import Product from "../Products/Product";
 import Footer from "../Components/Footer/Footer";
 
 const dummy_data = [
-    {
+    { 
+      // id: 1,
       title: "Shop For Men",
       price: 3200,
       imageURL:
         "https://images.pexels.com/photos/19166244/pexels-photo-19166244/free-photo-of-man-hand-holding-shoes.jpeg",
     },
-    {
+    { 
+      // id:2,
       title: "Shop For Women",
       price: 3200,
       imageURL:
@@ -19,6 +21,7 @@ const dummy_data = [
     },
     
     {
+      // id:3,
       title: "Shop For Kids",
       price: 3200,
       imageURL:
