@@ -4,7 +4,7 @@ import Container from "../Components/Navbar/Container";
 import Product from "../Products/Product";
 import Footer from "../Components/Footer/Footer";
 
-const dummy_data = [
+export const dummy_data = [
     { 
       // id: 1,
       title: "Shop For Men",

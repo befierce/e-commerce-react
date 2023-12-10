@@ -10,7 +10,7 @@ const ProductDetails = (props) => {
   return (
     <div>
       <Navbar />
-      <ProductDetailsPage id={id}/>
+      <ProductDetailsPage id={id} ProductsData={props.ProductsData}/>
       <Footer />
     </div>
   );
