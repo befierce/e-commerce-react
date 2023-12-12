@@ -6,7 +6,6 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    
     <div className="navbar">
       <NavLink id="websitename" to="/" activeclassname="active">
         ShopCop
@@ -20,7 +19,15 @@ const Navbar = () => {
       <NavLink id="contact-us" to="/contact-us" activeclassname="active">
         Contact
       </NavLink>
-      <CartButton />
+
+      <div className="sign-up-cart-button-container">
+        <CartButton />
+        <span>
+        <NavLink id="Sign Up" to="/sign-up" activeclassname="active">
+          <button className="sign-up-button">Sign Up</button>
+        </NavLink>
+        </span>
+      </div>
     </div>
   );
 };
