@@ -10,14 +10,14 @@ const SignUpForm = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
-//   const history = useHistory();
+  //   const history = useHistory();
 
   const [isLoggedInMode, setIsLoggedInMode] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const changeModeHandler = () => {
     setIsLoggedInMode((prev) => !prev);
 
-    
     // if (isLoggedInMode) {
     //   history.push("/login"); // Change the URL to '/login' on login mode
     // } else {
@@ -28,37 +28,47 @@ const SignUpForm = () => {
   const formSubmitHandler = async (e) => {
     e.preventDefault();
 
-      const enteredEmail =  emailInputRef.current.value;
-      const enteredPassword = passwordInputRef.current.value;
+    const enteredEmail = emailInputRef.current.value;
+    const enteredPassword = passwordInputRef.current.value;
+    setIsLoading(true);
 
-    if(isLoggedInMode){
-
+    let url;
+    if (isLoggedInMode) {
+      url =
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCmTY8ac-zTqK5VYV24wPcGY4bXVjOwWDU";
+      fetch("");
+    } else {
+      url =
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCmTY8ac-zTqK5VYV24wPcGY4bXVjOwWDU";
     }
-    else{
-        fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCmTY8ac-zTqK5VYV24wPcGY4bXVjOwWDU',{
-            method:'POST',
-            body: JSON.stringify({
-                email:enteredEmail,
-                password:enteredPassword,
-                returnSecureToken:true
-            }),
-            headers:{
-                'content-type': 'application/json'
-            }
-        }).then((res)=>{
-            if(res.ok){
-                console.log(res);
-            }
-            else{
-                return res.json().then(data => console.log(data));
-            }
-        })
-    }
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
+        email: enteredEmail,
+        password: enteredPassword,
+        returnSecureToken: true,
+      }),
+      headers: {
+        "content-type": "application/json",
+      },
+    }).then((res) => {
+      setIsLoading(false);
+      if (res.ok && res.status === 200) {
+        return res.json();
+      } else {
+        return res.json().then((data) => {
+          const errorMessage = data.error.message;
+          throw new Error(errorMessage);
+        });
+      }
+    }).then((data)=>{console.log(data)})
+    .catch((error)=>{
+      alert(error);
+    })
     emailInputRef.current.value = "";
     passwordInputRef.current.value = "";
     //   }
   };
-
 
   return (
     <>
@@ -74,9 +84,12 @@ const SignUpForm = () => {
               <input type="email" name="email" ref={emailInputRef} />
               <label>Password</label>
               <input type="tel" name="phone" ref={passwordInputRef} />
-              <button type="submit">
-                {isLoggedInMode ? "LOG-IN" : "Sign Up"}
-              </button>
+              {!isLoading && (
+                <button type="submit">
+                  {isLoggedInMode ? "LOG-IN" : "Sign Up"}
+                </button>
+              )}
+              {isLoading && <p>Sending request....</p>}
               <Link onClick={changeModeHandler}>
                 {isLoggedInMode ? "New user? Sign Up" : "Existing user? Login"}
               </Link>
