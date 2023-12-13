@@ -5,11 +5,16 @@ import "./SignUpForm.css";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
+import { useContext } from "react";
+import AuthContext from "../../store/auth-context";
+
+
 
 const SignUpForm = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
+  const authctx = useContext(AuthContext)
   //   const history = useHistory();
 
   const [isLoggedInMode, setIsLoggedInMode] = useState(true);
@@ -61,7 +66,9 @@ const SignUpForm = () => {
           throw new Error(errorMessage);
         });
       }
-    }).then((data)=>{console.log(data)})
+    }).then((data)=>{
+      authctx.login(data.idToken);
+    })
     .catch((error)=>{
       alert(error);
     })

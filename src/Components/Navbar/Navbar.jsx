@@ -3,8 +3,13 @@ import "./Navbar.css";
 import CartButton from "../Cart/CartButton/CartButton";
 // import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import AuthContext from "../../store/auth-context";
 
 const Navbar = () => {
+  const authctx = useContext(AuthContext);
+  const isLoggedIn = authctx.isLoggedIn;
+
   return (
     <div className="navbar">
       <NavLink id="websitename" to="/" activeclassname="active">
@@ -22,11 +27,15 @@ const Navbar = () => {
 
       <div className="sign-up-cart-button-container">
         <CartButton />
-        <span>
-        <NavLink id="Sign Up" to="/sign-up" activeclassname="active">
-          <button className="sign-up-button">Sign Up</button>
-        </NavLink>
-        </span>
+        {!isLoggedIn && (
+          <>
+            <span>
+              <NavLink id="Sign Up" to="/sign-up" activeclassname="active">
+                <button className="sign-up-button">Sign Up</button>
+              </NavLink>
+            </span>
+          </>
+        )}
       </div>
     </div>
   );
